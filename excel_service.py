@@ -85,7 +85,7 @@ def check_toloka(workbook):
     last_raw = {}
 
     while True:
-        if not toloka_sheet[f'B{toloka_raw}'].value:
+        if not toloka_sheet[f'D{toloka_raw}'].value:
             break
         sheet_name = toloka_sheet[f'D{toloka_raw}'].value.lower()
         if ' '.join(stemmer(sheet_name.split(' '))) not in [' '.join(stemmer(sheetname.split(' '))) for sheetname in workbook.sheetnames]:
