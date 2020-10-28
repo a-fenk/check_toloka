@@ -25,7 +25,7 @@ def chunks(l, n):
 def split_workbook(wb: Workbook):
     result = {}
     for index, chunk in enumerate(chunks(wb.sheetnames, Config.SHEETS_IN_FILE)):
-        filename = 'chunk_' + str(index) + '_' + datetime.datetime.now().strftime('%d-%m-%YT%H:%M:%S')
+        filename = f'check{str(index+1)}'
         output_workbook = create_workbook()
         for sheet in wb.sheetnames:
             work_sheet = output_workbook.create_sheet(sheet)
