@@ -1,5 +1,4 @@
 from excel_service import create_workbook, check_toloka, split_workbook
-from config import Config
 
 
 def run_toloka_checking():

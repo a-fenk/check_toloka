@@ -27,7 +27,7 @@ def split_workbook(wb: Workbook):
     for index, chunk in enumerate(chunks(wb.sheetnames, Config.SHEETS_IN_FILE)):
         filename = f'check{str(index+1)}'
         output_workbook = create_workbook()
-        for sheet in wb.sheetnames:
+        for sheet in chunk:
             work_sheet = output_workbook.create_sheet(sheet)
             for row_data in wb.get_sheet_by_name(sheet).iter_rows():
                 for row_cell in row_data:
